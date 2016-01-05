@@ -31,7 +31,6 @@ def bfs(p, max_depth, fbase, f_is_header):
             elif os.path.isfile(curr_p) and get_base_name(curr_p) == fbase and (
                  (f_is_header and is_src(curr_p)) or (not f_is_header and is_header(curr_p))):
                 pair = curr_p
-
     return pair
 
 def hsswitcher(p, max_depth = 9, curr_depth = 4):
@@ -48,10 +47,4 @@ def hsswitcher(p, max_depth = 9, curr_depth = 4):
                     break
                 p = os.path.dirname(p)
     return pair
-
-pair = hsswitcher(p =  vim.current.buffer.name)
-if pair:
-    vim.command('e %s' % pair);
-else:
-    print 'c++ pair not found'
 
