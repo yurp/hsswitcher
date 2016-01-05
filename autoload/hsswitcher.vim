@@ -14,3 +14,5 @@ sys.path.insert(0, os.path.join(p, '../python')
 EOF
 endfunction
 
+SetupPlugin()
+
