@@ -1,9 +1,23 @@
 
-function! HssSwitchCall()
+let s:this_script_path = escape(expand('<sfile>:p:h'), '\')
+
+function! s:SetupPlugin()
+python << EOF
+
+import os
+import sys
+import vim
+
+p = vim.eval('s:this_script_path')
+sys.path.insert(0, os.path.join(p, '../python'))
+
+EOF
+endfunction
+
+function! s:HssSwitchCall()
 python << EOF
 
 from hsswitcher import hsswitcher
-import vim
 
 pair = hsswitcher(p =  vim.current.buffer.name)
 if pair:
@@ -14,5 +28,7 @@ else:
 EOF
 endfunction
 
-command! HssSwitch call HssSwitchCall()
+call s:SetupPlugin()
+
+command! HssSwitch call s:HssSwitchCall()
 
