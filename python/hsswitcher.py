@@ -10,7 +10,7 @@ def is_header(p):
 
 def is_src(p):
     _, ext = os.path.splitext(p)
-    return os.path.isfile(p) and ext in ('.c', '.cpp', '.cxx')
+    return os.path.isfile(p) and ext in ('.c', '.cpp', '.cxx', '.cc')
 
 def is_root(p):
     return p == os.path.dirname(p)
