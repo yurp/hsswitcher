@@ -6,7 +6,7 @@ import vim
 
 def is_header(p):
     _, ext = os.path.splitext(p)
-    return os.path.isfile(p) and ext in ('.h', '.hpp', '.hxx')
+    return os.path.isfile(p) and ext in ('.h', '.hpp', '.hxx', '.hh')
 
 def is_src(p):
     _, ext = os.path.splitext(p)
