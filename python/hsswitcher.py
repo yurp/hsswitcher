@@ -41,7 +41,7 @@ def hsswitcher(p, max_depth = 9, curr_depth = 4):
         if f_is_header or is_src(p):
             fname = os.path.basename(p)
             fbase, _ = os.path.splitext(fname)
-            for i in xrange(curr_depth, 0, -1):
+            for i in range(curr_depth, 0, -1):
                 pair = bfs(p, max_depth - i, fbase, f_is_header)
                 if pair:
                     break

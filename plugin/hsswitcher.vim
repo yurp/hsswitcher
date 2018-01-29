@@ -2,7 +2,7 @@
 let s:this_script_path = escape(expand('<sfile>:p:h'), '\')
 
 function! s:SetupPlugin()
-python << EOF
+python3 << EOF
 
 import os
 import sys
@@ -15,7 +15,7 @@ EOF
 endfunction
 
 function! s:HssSwitchCall()
-python << EOF
+python3 << EOF
 
 from hsswitcher import hsswitcher
 
@@ -23,7 +23,7 @@ pair = hsswitcher(p =  vim.current.buffer.name)
 if pair:
     vim.command('e %s' % pair);
 else:
-    print 'c++ pair not found'
+    print('c++ pair not found')
 
 EOF
 endfunction
