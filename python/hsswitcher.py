@@ -48,3 +48,10 @@ def hsswitcher(p, max_depth = 9, curr_depth = 4):
                 p = os.path.dirname(p)
     return pair
 
+def hsswitch_call(p):
+    pair = hsswitcher(p)
+    if pair:
+        vim.command('e %s' % pair);
+    else:
+        print('c++ pair not found')
+    
